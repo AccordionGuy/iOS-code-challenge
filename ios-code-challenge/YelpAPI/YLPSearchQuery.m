@@ -43,6 +43,13 @@
     if(self.categoryFilter != nil && self.categoryFilter.count > 0) {
         params[@"categories"] = [self.categoryFilter componentsJoinedByString:@","];
     }
+
+    // Allowed values for the “sort_by” parameter are:
+    // - best_match (default)
+    // - distance
+    // - rating
+    // - review_count
+    params[@"sort_by"] = @"distance";
     
     return params;
 }
