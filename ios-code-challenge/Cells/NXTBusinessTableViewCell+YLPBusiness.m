@@ -22,10 +22,12 @@
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f miles", [self metersToMiles:business.distance]];
     self.reviewCountLabel.text = [NSString stringWithFormat:@"%d reviews", business.reviewCount];
     
-//    NSUInteger numCategories = [business.categories count];
     NSLog(@"business.categories = %@",business.categories[0][@"title"]);
     self.categoriesLabel.text = [self categoryTitles:business.categories];
 }
+
+
+#pragma mark - Data conversion functions
 
 - (NSString *)ratingToStars:(double)rating
 {
@@ -61,7 +63,9 @@
     return [NSString stringWithString:categoryTitlesBuilder];
 }
 
+
 #pragma mark - NXTBindingDataForObjectDelegate
+
 - (void)bindingDataForObject:(id)object
 {
     [self configureCell:(YLPBusiness *)object];
