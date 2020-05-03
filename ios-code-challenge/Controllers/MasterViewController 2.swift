@@ -32,11 +32,8 @@ class MasterViewController: UITableViewController {
             guard let strongSelf = self,
                 let dataSource = strongSelf.dataSource,
                 let businesses = searchResult?.businesses else {
-                    print("MasterViewController::viewDidLoad() -- Failed search.")
-                    print("Error: \(error.debugDescription)")
                     return
             }
-            print("MasterViewController::viewDidLoad() -- Successful search.")
             dataSource.setObjects(businesses)
             strongSelf.tableView.reloadData()
         })

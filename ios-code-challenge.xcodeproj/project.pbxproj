@@ -93,6 +93,7 @@
 		C5CEF1D82015354C009D1571 /* NXTBusinessTableViewCell+YLPBusiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NXTBusinessTableViewCell+YLPBusiness.m"; sourceTree = "<group>"; };
 		C5CEF1DA20153618009D1571 /* YLPBusiness+CellForObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLPBusiness+CellForObject.h"; sourceTree = "<group>"; };
 		C5CEF1DB20153618009D1571 /* YLPBusiness+CellForObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLPBusiness+CellForObject.m"; sourceTree = "<group>"; };
+		D4E90DCA245F20DE00C82B14 /* Secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
 		E98E17AF5F4AF737558F432A /* libPods-ios-code-challenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-code-challenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3125ABF2066AA64D25CD6E /* Pods-ios-code-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-code-challengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-code-challengeTests/Pods-ios-code-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE926015E1B4191E0337FDF0 /* libPods-ios-code-challengeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-code-challengeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +175,7 @@
 		C5CEF1802013F25A009D1571 /* ios-code-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				D4E90DCA245F20DE00C82B14 /* Secrets.h */,
 				8DC8B21822A1764400CA0435 /* ios-code-challenge-Bridging-Header.h */,
 				C5CEF1D1201534CD009D1571 /* Cells */,
 				C5CEF1C72014D73A009D1571 /* YelpAPI */,

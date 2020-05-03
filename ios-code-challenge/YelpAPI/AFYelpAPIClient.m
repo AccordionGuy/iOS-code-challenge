@@ -8,8 +8,18 @@
 
 #import "AFYelpAPIClient.h"
 #import "AFOAuth2Manager.h"
+#import "Secrets.h"
 
-static NSString *const kYelpAPIKey = @"";
+/**
+ 
+SECURITY NOTICE
+As a security measure, passwords, API keys and other sensitive information for accessing systems are stored
+in Secrets.h. In a non-test scenario application, Secrets.h would NOT be tracked with regular code files,
+but in a limited-access repository.
+ 
+ */
+// static NSString *const kYelpAPIKey = @""; *** See Secrets.h for this value ***
+
 static NSString *const kYelpAPIBaseURL = @"https://api.yelp.com/v3/";
 
 @interface AFYelpAPIClient()
