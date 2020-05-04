@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     lazy private var favoriteBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Star-Outline"), style: .plain, target: self, action: #selector(onFavoriteBarButtonSelected(_:)))
 
-    @objc var detailItem: NSDate?
+    @objc var detailItem: YLPBusiness?
     
     private var _favorite: Bool = false
     private var isFavorite: Bool {
@@ -31,10 +31,10 @@ class DetailViewController: UIViewController {
     
     private func configureView() {
         guard let detailItem = detailItem else { return }
-        detailDescriptionLabel.text = detailItem.description
+        detailDescriptionLabel.text = detailItem.name
     }
     
-    func setDetailItem(newDetailItem: NSDate) {
+    func setDetailItem(newDetailItem: YLPBusiness) {
         guard detailItem != newDetailItem else { return }
         detailItem = newDetailItem
         configureView()

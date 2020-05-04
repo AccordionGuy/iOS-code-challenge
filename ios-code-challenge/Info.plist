@@ -46,6 +46,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs to use your location in order to recommend businesses near you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs to use your location in order to recommend businesses near you.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
