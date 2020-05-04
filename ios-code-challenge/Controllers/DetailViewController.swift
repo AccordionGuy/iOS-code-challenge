@@ -69,8 +69,6 @@ class DetailViewController: UIViewController {
         updateFavoriteBarButtonState()
     }
 
-    // MARK: Data conversion methods
-
     func ratingToStars(rating: Double) -> String {
         var wholeNumberPart: Double = 0.0
         let fractionPart = modf(rating, &wholeNumberPart)
@@ -95,7 +93,6 @@ class DetailViewController: UIViewController {
         let numCategories = categories.count
         return ("\(numCategories) categories")
     }
-
 }
 
 
