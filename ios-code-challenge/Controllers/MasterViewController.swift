@@ -56,28 +56,37 @@ class MasterViewController: UITableViewController,
             print("MasterViewController::viewDidLoad() -- Successful search.")
             dataSource.setObjects(businesses)
             strongSelf.tableView.reloadData()
-            self?.businesses = businesses
+
+            // Super-hacky attempt to load detail view
+            strongSelf.businesses = businesses
+            strongSelf.performSegue(withIdentifier: "showDetail", sender: "hack")
         })
     }
-    
-    // MARK: - Navigation
-    func showFirstBusinessDetails() {
 
-    }
+
+    // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            guard let indexPath = tableView.indexPathForSelectedRow,
-                let controller = segue.destination as? DetailViewController else {
-                return
-            }
-            let object = businesses[indexPath.row]
-            controller.setDetailItem(newDetailItem: object)
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+      print("Segue called")
+      if segue.identifier == "showDetail" {
+          if let indexPath = tableView.indexPathForSelectedRow {
+              let business = businesses[indexPath.row]
+              let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+              controller.detailItem = business
+              controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+              controller.navigationItem.leftItemsSupplementBackButton = true
+              detailViewController = controller
+          } else {
+            print("Hack path")
+            let business = businesses[0]
+            let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+            controller.detailItem = business
+            controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
-        }
+            detailViewController = controller
+          }
+      }
     }
-
 
     // MARK: Geolocation methods
 
