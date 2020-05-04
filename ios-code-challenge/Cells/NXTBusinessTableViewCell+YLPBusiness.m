@@ -18,7 +18,7 @@
     self.thumbnailImage.image = [UIImage imageWithData:imageData];
     
     self.nameLabel.text = business.name;
-    self.ratingLabel.text = [self ratingToStars:business.rating];
+    //self.ratingLabel.text = business.ra //[self ratingToStars:business.rating];
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f miles", [self metersToMiles:business.distance]];
     self.reviewCountLabel.text = [NSString stringWithFormat:@"%d reviews", business.reviewCount];
     

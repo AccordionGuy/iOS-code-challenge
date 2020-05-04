@@ -49,6 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, copy) NSString *thumbnailURLText;
 
+-  (NSString *)ratingsAsStars:(double)rating;
+
 @end
 
 NS_ASSUME_NONNULL_END
