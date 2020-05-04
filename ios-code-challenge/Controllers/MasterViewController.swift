@@ -77,6 +77,11 @@ class MasterViewController: UITableViewController,
               controller.navigationItem.leftItemsSupplementBackButton = true
               detailViewController = controller
           } else {
+            // HACK: Tapping on cells in master view doesn’t cause the segue to happen,
+            // and I haven’t been able to figure out why.
+            //
+            // This branch simply loads the detail view with the first business,
+            // just to show that it can be done.
             print("Hack path")
             let business = businesses[0]
             let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController

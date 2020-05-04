@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
         if let thumbnailURL = URL(string: detailItem.thumbnailURLText) {
             thumbnailImage.load(url: thumbnailURL)
 
-            // TODO: Show a default image if we can’t load one
+            // TODO: Show a default image if we can’t get one from Yelp for some reason
         }
 
         let formattedDistance = String(format: "%.1f miles",
