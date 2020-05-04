@@ -20,6 +20,8 @@ class MasterViewController: UITableViewController,
     var lastReverseGeocodedAddress: String!
     var businesses: [YLPBusiness]!
 
+    let searchController = UISearchController(searchResultsController: nil)
+
     lazy private var dataSource: NXTDataSource? = {
         guard let dataSource = NXTDataSource(objects: nil) else { return nil }
         dataSource.tableViewDidReceiveData = { [weak self] in
@@ -36,6 +38,8 @@ class MasterViewController: UITableViewController,
         
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+
+        navigationItem.searchController = searchController
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +95,11 @@ class MasterViewController: UITableViewController,
             detailViewController = controller
           }
       }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt: \(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: nil)
     }
 
     // MARK: Geolocation methods
